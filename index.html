@@ -1,629 +1,149 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>InTrust — Estate Planning Document Workflow Automation</title>
-
-  <meta
-    name="description"
-    content="InTrust helps estate planning firms generate consistent, complete estate planning document packages through tailored legal workflow automation."
-  />
-
-  <meta name="author" content="InTrust" />
-  <meta name="robots" content="index, follow" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="InTrust — Estate Planning Document Workflow Automation" />
-  <meta
-    property="og:description"
-    content="Generate consistent estate planning document packages through tailored workflow automation built around your firm's process."
-  />
-  <meta property="og:image" content="https://getintrust.com/assets/images/workspaceScreen.webp" />
-  <meta property="og:url" content="https://getintrust.com" />
-  <meta property="og:site_name" content="InTrust" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="InTrust — Estate Planning Workflow Automation" />
-  <meta
-    name="twitter:description"
-    content="Tailored workflow automation for estate planning firms."
-  />
-  <meta name="twitter:image" content="https://getintrust.com/assets/images/workspaceScreen.webp" />
-
-  <!-- Theme -->
-  <meta name="theme-color" content="#1f2435" />
-
-  <link rel="canonical" href="https://getintrust.com/" />
-
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap"
-    rel="stylesheet"
-  />
-
-  <link rel="icon" type="image/svg+xml" href="./assets/brand/intrust-icon.svg" />
-  <link rel="apple-touch-icon" href="./assets/brand/intrust-icon.svg" />
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: {
-              950: "#0B1120",
-              900: "#0F172A",
-              850: "#131D33",
-              800: "#172041",
-              700: "#1E2D52",
-              600: "#2A3D6B",
-              500: "#3B5198",
-            },
-            cream: {
-              50: "#FAF8F4",
-              100: "#F0EDE5",
-              200: "#E2DDD0",
-              300: "#D1C9B8",
-              400: "#B5AA94",
-              500: "#9A8E78",
-            },
-            accent: {
-              DEFAULT: "#e1d9bc",
-              light: "#ede8d6",
-              muted: "#c4b898",
-              subtle: "rgba(225,217,188,0.12)",
-            },
-          },
-          fontFamily: {
-            serif: ["DM Serif Display", "Georgia", "serif"],
-            sans: ["DM Sans", "system-ui", "sans-serif"],
-          },
-          borderRadius: {
-            "2xl": "20px",
-            "3xl": "24px",
-          },
-        },
-      },
-    };
-  </script>
-
-  <link rel="stylesheet" href="./styles.css" />
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "InTrust",
-      "applicationCategory": "LegalApplication",
-      "operatingSystem": "Windows",
-      "description": "Estate planning document workflow automation tailored for law firms.",
-      "url": "https://getintrust.com"
-    }
-</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>InTrust — A clearer flow for estate planning</title>
+  <meta name="description" content="Move from case details to estate documents ready for review. InTrust brings document preparation, clients, tasks, calendar events, and expected fees into one desktop workspace.">
+  <meta name="theme-color" content="#1f2435">
+  <link rel="canonical" href="https://www.getintrust.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="InTrust — A clearer flow for estate planning">
+  <meta property="og:description" content="Less repetitive drafting. More room for the people behind the plans. Meet the redesigned InTrust workspace.">
+  <meta property="og:url" content="https://www.getintrust.com/">
+  <meta property="og:image" content="https://www.getintrust.com/assets/images/current/overview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="InTrust — A clearer flow for estate planning">
+  <meta name="twitter:description" content="Document preparation and the work around it, thoughtfully brought together.">
+  <meta name="twitter:image" content="https://www.getintrust.com/assets/images/current/overview.png">
+  <link rel="icon" type="image/svg+xml" href="assets/brand/intrust-icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20261018-dark-motion">
+  <script src="script.js?v=dark-gallery-1" defer></script>
 </head>
-
-<body class="hero-gradient text-cream-100 min-h-screen overflow-x-hidden">
-  <nav class="fixed top-0 left-0 right-0 z-50 glass-panel">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#top" class="flex items-center gap-2.5" aria-label="InTrust home">
-        <img
-          src="./assets/brand/intrust-icon.svg"
-          alt="InTrust logo"
-          class="w-8 h-8 rounded-lg"
-        />
-        <span class="font-serif text-xl text-cream-50 tracking-wide">InTrust</span>
-      </a>
-
-      <div class="hidden md:flex items-center gap-8 text-sm text-cream-300">
-        <a href="#how-it-works" class="hover:text-cream-100 transition-colors">How It Works</a>
-        <a href="#benefits" class="hover:text-cream-100 transition-colors">Benefits</a>
-        <a href="#product" class="hover:text-cream-100 transition-colors">Product</a>
-        <a href="#pricing" class="hover:text-cream-100 transition-colors">Pricing</a>
-      </div>
-
-      <div class="hidden md:flex items-center gap-4">
-        <a href="#contact" class="cta-primary text-navy-950 text-sm font-medium px-5 py-2.5 rounded-2xl">
-          Request a Demo
-        </a>
-      </div>
-
-      <button id="mobile-menu-btn" class="md:hidden text-cream-300 hover:text-cream-100" aria-label="Open menu">
-        <i data-lucide="menu" class="w-6 h-6"></i>
-      </button>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="reading-progress" aria-hidden="true"></div>
+    <div class="nav-wrap">
+      <a class="wordmark" href="#top" aria-label="InTrust home">InTrust</a>
+      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">☰</span></button>
+      <nav id="main-nav" aria-label="Main navigation">
+        <a href="#how-it-works">The workflow</a><a href="#product">The workspace</a><a href="#pricing">For your firm</a>
+        <a class="button small light" href="#contact">Let’s take a look <span aria-hidden="true">↗</span></a>
+      </nav>
     </div>
-
-    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-      <div class="flex flex-col gap-3 text-sm text-cream-300">
-        <a href="#how-it-works" class="hover:text-cream-100 transition-colors py-2 border-b border-subtle">How It Works</a>
-        <a href="#benefits" class="hover:text-cream-100 transition-colors py-2 border-b border-subtle">Benefits</a>
-        <a href="#product" class="hover:text-cream-100 transition-colors py-2 border-b border-subtle">Product</a>
-        <a href="#pricing" class="hover:text-cream-100 transition-colors py-2 border-b border-subtle">Pricing</a>
-        <a href="#contact" class="cta-primary text-navy-950 text-sm font-medium px-5 py-2.5 rounded-2xl text-center mt-2">Request a Demo</a>
+  </header>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-lines" aria-hidden="true"><svg viewBox="0 0 1440 780" preserveAspectRatio="none"><path d="M-40 480H180Q260 480 260 560V640Q260 700 340 700H1100Q1180 700 1180 620V230Q1180 150 1260 150H1480"/><path d="M-40 450H150Q230 450 230 530V670Q230 730 310 730H1130Q1210 730 1210 650V260Q1210 180 1290 180H1480"/></svg></div>
+      <div class="container hero-copy">
+        <p class="eyebrow hero-label"><span class="status-dot"></span> Estate planning, thoughtfully connected</p>
+        <h1>Less busywork.<br>More <em>forward motion.</em></h1>
+        <p class="hero-description">From the first client detail to the next follow-up.<br class="desktop-break"> A calmer, more connected way to prepare estate packages.</p>
+        <div class="hero-actions"><a class="button light" href="#contact">Request a walkthrough <span aria-hidden="true">↗</span></a><a class="text-link" href="#how-it-works">See how it flows <span aria-hidden="true">↓</span></a></div>
+        <p class="hero-note">A desktop workspace for estate planning practices · Early access</p>
       </div>
-    </div>
-  </nav>
+      <div class="hero-product container">
+        <div class="product-topline"><span><span class="tiny-cross" aria-hidden="true">✳</span> A little clarity. A lot of momentum.</span><div class="appearance-preview" role="group" aria-label="Preview workspace appearance"><button id="preview-light" aria-pressed="false">Light</button><button id="preview-dark" aria-pressed="true">Dark</button></div></div>
+        <div class="app-window hero-window"><div class="window-bar"><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>InTrust / Your workspace</span><span class="window-local"><span class="status-dot"></span> On your device</span></div><img id="hero-image" src="assets/images/current/overview-dark.png" width="1280" height="678" alt="The redesigned InTrust overview with cases, package activity, and a continue-case action." fetchpriority="high"></div>
+        <div class="floating-note"><span class="note-icon" aria-hidden="true">✓</span><div><strong>The next step, in sight.</strong><span>Cases. Documents. Everything around them.</span></div></div>
+        <p class="sample-caption">Actual workspace · Fictional sample data</p>
+      </div>
+    </section>
 
-  <main id="top">
-    <div class="ambient-orb ambient-orb-one"></div>
-    <div class="ambient-orb ambient-orb-two"></div>
-    <!-- Hero -->
-    <section class="pt-32 pb-20 md:pt-36 md:pb-24 px-6">
-      <div class="max-w-7xl mx-auto grid md:grid-cols-[0.85fr_1.15fr] gap-12 md:gap-16 items-center">
-        <div class="max-w-xl reveal">
-          <div class="inline-flex items-center gap-2 glass-card rounded-full px-4 py-1.5 mb-8">
-            <div class="w-1.5 h-1.5 rounded-full bg-accent"></div>
-            <span class="text-xs text-cream-400 font-medium tracking-wide uppercase">Designed Around Your Firm</span>
+    <section class="intro-strip"><div class="container"><p>Built for the work.<br><strong>And the people behind it.</strong></p><div><span>Guided document preparation</span><span>Word files for your review</span><span>Locally stored workspace</span></div></div></section>
+
+    <section id="how-it-works" class="workflow section-pad">
+      <div class="container">
+        <div class="section-heading split-heading"><div><p class="eyebrow">01 / From details to documents</p><h2>One case.<br>A clearer way through.</h2></div><p>Less copying, assembling, and keeping track.<br>InTrust brings structure to the preparation, so your attention can stay on the plan.</p></div>
+        <div class="workflow-scroll"><div class="workflow-pin">
+        <div class="scroll-cue"><span class="scroll-only">Scroll to move the package forward</span><span class="manual-only">Choose a step to explore the workflow</span><a href="#product">Skip to the workspace ↓</a></div>
+        <div class="workflow-console">
+          <div class="workflow-controls"><span class="eyebrow">A package in motion</span><button class="play-control" id="play-flow" aria-pressed="false"><span aria-hidden="true">▷</span> Play walkthrough</button></div>
+          <div class="flow-tabs" role="tablist" aria-label="Estate package workflow">
+            <button role="tab" id="flow-tab-0" aria-selected="true" aria-controls="flow-panel" data-step="0"><span class="step-number">01</span><span>Enter the details</span><span class="step-arrow" aria-hidden="true">→</span></button>
+            <button role="tab" id="flow-tab-1" aria-selected="false" aria-controls="flow-panel" tabindex="-1" data-step="1"><span class="step-number">02</span><span>Shape the package</span><span class="step-arrow" aria-hidden="true">→</span></button>
+            <button role="tab" id="flow-tab-2" aria-selected="false" aria-controls="flow-panel" tabindex="-1" data-step="2"><span class="step-number">03</span><span>Generate & review</span><span class="step-arrow" aria-hidden="true">→</span></button>
+            <button role="tab" id="flow-tab-3" aria-selected="false" aria-controls="flow-panel" tabindex="-1" data-step="3"><span class="step-number">04</span><span>Keep it moving</span></button>
           </div>
-
-          <h1 class="font-serif text-4xl sm:text-5xl lg:text-[3.4rem] leading-tight text-cream-50 mb-6">
-            Generate Estate Packages in Minutes — <span class="text-accent-light">Not Hours</span>
-          </h1>
-
-          <p class="text-cream-300 text-lg leading-relaxed mb-6 max-w-md">
-            InTrust helps estate planning firms turn structured intake data into consistent, complete document packages through tailored legal workflow automation.
-          </p>
-
-          <p class="text-cream-400 text-sm leading-relaxed mb-10 max-w-md">
-            Configured around your firm’s templates, clause preferences, review process, and estate planning workflow. Built to adapt to the way your firm already works.
-          </p>
-
-          <div class="flex flex-wrap gap-4">
-            <a href="#contact" class="cta-primary text-navy-950 font-medium px-7 py-3.5 rounded-2xl text-sm tracking-wide inline-flex items-center gap-2">
-              Request a Demo
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-
-            <a href="#product" class="glass-card text-cream-200 font-medium px-7 py-3.5 rounded-2xl text-sm tracking-wide hover:bg-white/5 transition-colors inline-flex items-center gap-2">
-              <i data-lucide="play-circle" class="w-4 h-4 text-accent"></i>
-              Preview Workflow
-            </a>
+          <div class="flow-panel" id="flow-panel" role="tabpanel" aria-labelledby="flow-tab-0" tabindex="0" data-stage="0">
+            <div class="flow-story"><span class="mini-label" id="flow-kicker">THE STARTING POINT</span><h3 id="flow-title">Give every detail<br>a place to belong.</h3><p id="flow-description">Open a case and work through structured fields for the client, fiduciaries, beneficiaries, and planning choices.</p><span class="flow-footnote">Illustrative workflow · You guide each step</span></div>
+            <div class="flow-art" aria-hidden="true">
+              <div class="flow-paper"><div class="paper-heading"><span class="paper-icon">▤</span><span id="art-label">CASE DETAILS</span><span class="paper-case">0042</span></div><strong id="art-title">Morgan Family Estate</strong><div class="paper-divider"></div><div id="art-rows"><div class="paper-row"><span>Client</span><b>Alex Morgan</b></div><div class="paper-row"><span>County</span><b>Travis</b></div><div class="paper-row"><span>Planning choices</span><b>Ready to enter</b></div></div><div class="paper-status"><span class="status-dot"></span><span id="art-status">A clear starting point</span></div></div>
+              <div class="flow-route"><span></span><span></span><span></span></div>
+              <div class="flow-destination"><span id="art-destination-icon">↗</span><div><small id="art-destination-label">UP NEXT</small><strong id="art-destination">Build your package</strong></div></div>
+            </div>
           </div>
+          <div class="flow-bottom"><span>Structured preparation. Professional judgment at every step.</span><span id="flow-counter">01 — 04</span></div>
         </div>
+        <div class="workflow-progress" aria-hidden="true"><span></span></div>
+        </div></div>
+      </div>
+    </section>
 
-        <div class="relative reveal reveal-delay-1">
-          <div class="relative md:-mr-16 lg:-mr-20">
-            <video
-              autoplay
-              muted
-              loop
-              playsinline
-              preload="metadata"
-              poster="./assets/images/caseListScreen.webp"
-              class="product-shot w-full h-auto block rounded-xl shadow-2xl border border-white/5"
-            >
-              <source src="./assets/images/openingCase.webm" type="video/webm" />
-              Your browser does not support the video tag.
-            </video>
-            <div class="absolute inset-0 rounded-xl pointer-events-none shadow-[0_0_90px_rgba(225,217,188,0.07)]"></div>
-          </div>
+    <section class="flow-bridge" aria-label="Less repetition. More connection. Room to focus.">
+      <div class="container" aria-hidden="true"><span class="eyebrow">A little less friction. A lot more flow.</span><p><span>Less repetition.</span><span>More connection.</span><span><em>Room to focus.</em></span></p><div class="bridge-track"><i></i></div></div>
+    </section>
 
-          <div class="absolute -bottom-8 -right-8 w-48 h-48 bg-accent/5 rounded-full blur-3xl pointer-events-none"></div>
+    <section class="workspace-section section-pad" id="product">
+      <div class="container">
+        <div class="section-heading centered"><p class="eyebrow">02 / The whole picture</p><h2>The package is only<br><em>part of the work.</em></h2><p>Meet the workspace for everything around it.</p></div>
+        <div class="workspace-tabs" role="tablist" aria-label="Explore the InTrust workspace">
+          <button role="tab" id="workspace-tab-overview" aria-controls="workspace-panel" aria-selected="true" data-screen="overview">Overview</button>
+          <button role="tab" id="workspace-tab-package" aria-controls="workspace-panel" aria-selected="false" tabindex="-1" data-screen="package">Document packages</button>
+          <button role="tab" id="workspace-tab-clients" aria-controls="workspace-panel" aria-selected="false" tabindex="-1" data-screen="clients">Clients</button>
+          <button role="tab" id="workspace-tab-calendar" aria-controls="workspace-panel" aria-selected="false" tabindex="-1" data-screen="calendar">Calendar</button>
+          <button role="tab" id="workspace-tab-fees" aria-controls="workspace-panel" aria-selected="false" tabindex="-1" data-screen="fees">Case fees</button>
+        </div>
+        <div id="workspace-panel" role="tabpanel" aria-labelledby="workspace-tab-overview" tabindex="0">
+          <div class="app-window gallery-window"><div class="window-bar"><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span id="screen-label">InTrust / Overview</span><span>DESKTOP WORKSPACE</span></div><button class="screenshot-button" id="enlarge-screen" aria-label="Enlarge overview screenshot"><img id="workspace-image" src="assets/images/current/overview-dark.png" width="1280" height="678" loading="lazy" alt="InTrust overview with case activity, package totals, and a continue-case action. Dark mode."><span class="enlarge-label">View larger ↗</span></button></div>
+          <div class="screen-caption"><div><h3 id="screen-title">Pick up exactly where you left off.</h3><p id="screen-description">See your cases, upcoming tasks, and recorded activity, then move straight into the next piece of work.</p></div><p>Actual workspace<br>Fictional sample data</p></div>
+        </div>
+        <div class="detail-grid" id="benefits">
+          <article><span class="detail-icon" aria-hidden="true">☑</span><h3>A next step for every case.</h3><p>Keep dated and undated tasks with their cases. Track what’s open, what’s due, and what’s done.</p></article>
+          <article><span class="detail-icon" aria-hidden="true">↗</span><h3>A thoughtful follow-up.</h3><p>Start from a client email template, personalize it, and open a draft in your email app. You review and send.</p></article>
+          <article><span class="detail-icon" aria-hidden="true">◷</span><h3>Your time, made visible.</h3><p>Compare tracked workspace time with your own manual-drafting estimates. See the difference in your workflow.</p></article>
         </div>
       </div>
     </section>
 
-    <!-- How It Works -->
-    <section id="how-it-works" class="section-gradient py-20 px-6">
-      <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-12 reveal">
-          <div class="text-xs text-accent/80 font-medium uppercase tracking-widest mb-4">Workflow</div>
-          <h2 class="font-serif text-3xl sm:text-4xl text-cream-50 mb-4">How It Works</h2>
-          <p class="text-cream-400 max-w-lg mx-auto">
-            A guided process for turning client information into a review-ready estate planning package.
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-6 md:gap-8">
-          <div class="glass-card rounded-3xl p-8 relative group hover:border-cream-300/15 transition-colors reveal">
-            <div class="flex items-center gap-3 mb-6">
-              <div class="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
-                <span class="font-serif text-accent text-lg">1</span>
-              </div>
-              <div class="h-px flex-1 bg-gradient-to-r from-cream-300/15 to-transparent"></div>
-            </div>
-            <div class="w-12 h-12 rounded-2xl bg-navy-700/40 border border-subtle flex items-center justify-center mb-5">
-              <i data-lucide="user" class="w-5 h-5 text-cream-200"></i>
-            </div>
-            <h3 class="text-lg font-medium text-cream-100 mb-3">Enter Client Information</h3>
-            <p class="text-sm text-cream-400 leading-relaxed">
-              Capture client details, family structure, fiduciaries, beneficiaries, and planning decisions through a structured intake flow.
-            </p>
-          </div>
-
-          <div class="glass-card rounded-3xl p-8 relative group hover:border-cream-300/15 transition-colors reveal reveal-delay-1">
-            <div class="flex items-center gap-3 mb-6">
-              <div class="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
-                <span class="font-serif text-accent text-lg">2</span>
-              </div>
-              <div class="h-px flex-1 bg-gradient-to-r from-cream-300/15 to-transparent"></div>
-            </div>
-            <div class="w-12 h-12 rounded-2xl bg-navy-700/40 border border-subtle flex items-center justify-center mb-5">
-              <i data-lucide="settings-2" class="w-5 h-5 text-cream-200"></i>
-            </div>
-            <h3 class="text-lg font-medium text-cream-100 mb-3">Configure the Package</h3>
-            <p class="text-sm text-cream-400 leading-relaxed">
-              Select documents and provisions based on the client’s needs while keeping your firm’s preferred language intact.
-            </p>
-          </div>
-
-          <div class="glass-card rounded-3xl p-8 relative group hover:border-cream-300/15 transition-colors reveal reveal-delay-2">
-            <div class="flex items-center gap-3 mb-6">
-              <div class="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
-                <span class="font-serif text-accent text-lg">3</span>
-              </div>
-            </div>
-            <div class="w-12 h-12 rounded-2xl bg-navy-700/40 border border-subtle flex items-center justify-center mb-5">
-              <i data-lucide="file-check" class="w-5 h-5 text-cream-200"></i>
-            </div>
-            <h3 class="text-lg font-medium text-cream-100 mb-3">Generate for Review</h3>
-            <p class="text-sm text-cream-400 leading-relaxed">
-              Produce consistent Word documents that are organized, cross-checked, and ready for attorney review.
-            </p>
-          </div>
+    <section class="time-section section-pad">
+      <div class="container time-layout">
+        <div class="time-copy"><p class="eyebrow">03 / Room for what matters</p><h2>What could a little<br>less repetition<br> <em>make room for?</em></h2><p>A client conversation. A careful review.<br>A little breathing room in your day.</p><p class="time-secondary">Explore the difference with your own estimates.<br>In the app, Productivity uses your recorded activity and the manual baselines you set.</p></div>
+        <div class="time-calculator">
+          <div class="calc-header"><span class="eyebrow">Your workflow, in perspective</span><span class="example-tag">Illustrative estimate</span></div>
+          <div class="calc-inputs"><label>Manual preparation<span><input id="manual-time" type="number" value="90" min="0" max="1440" step="1" inputmode="numeric"><small>min / package</small></span></label><label>Preparation with InTrust<span><input id="app-time" type="number" value="30" min="0" max="1440" step="1" inputmode="numeric"><small>min / package</small></span></label><label>Packages each month<span><input id="package-count" type="number" value="8" min="0" max="1000" step="1" inputmode="numeric"><small>packages</small></span></label></div>
+          <div class="comparison-bars" aria-hidden="true"><div><span>Manual</span><i id="manual-bar"></i></div><div><span>InTrust</span><i id="app-bar"></i></div></div>
+          <div class="calc-result" role="status" aria-live="polite" aria-atomic="true"><strong id="time-result">8 <span>hours</span></strong><p id="time-result-label">of potential time back each month</p></div>
+          <p class="calc-note" id="estimate-note">Example inputs, not measured results or a performance promise. Actual time depends on your package and review process. Use the same scope of work for both estimates.</p>
         </div>
       </div>
     </section>
 
-    <!-- Benefits -->
-    <section id="benefits" class="py-20 px-6 benefits-bg">
-      <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-12 reveal">
-          <div class="text-xs text-accent/80 font-medium uppercase tracking-widest mb-4">Why InTrust</div>
-          <h2 class="font-serif text-3xl sm:text-4xl text-cream-50 mb-4">Built for the Way Estate Firms Actually Work</h2>
-          <p class="text-cream-400 max-w-lg mx-auto">
-            InTrust focuses on consistency, speed, and workflow fit — not forcing your firm into generic software.
-          </p>
-        </div>
-
-        <div class="grid sm:grid-cols-2 gap-5">
-          <div class="glass-card rounded-3xl p-7 flex gap-5 items-start hover:border-cream-300/15 transition-colors reveal">
-            <div class="w-11 h-11 rounded-xl bg-navy-700/50 border border-subtle flex items-center justify-center shrink-0">
-              <i data-lucide="repeat" class="w-5 h-5 text-cream-200"></i>
-            </div>
-            <div>
-              <h3 class="text-base font-medium text-cream-100 mb-2">Eliminate Repetitive Drafting</h3>
-              <p class="text-sm text-cream-400/80 leading-relaxed">
-                Stop rebuilding the same document package from scratch. Structured workflows adapt to each client while preserving your firm’s drafting standards.
-              </p>
-            </div>
-          </div>
-
-          <div class="glass-card rounded-3xl p-7 flex gap-5 items-start hover:border-cream-300/15 transition-colors reveal reveal-delay-1">
-            <div class="w-11 h-11 rounded-xl bg-navy-700/50 border border-subtle flex items-center justify-center shrink-0">
-              <i data-lucide="check-check" class="w-5 h-5 text-cream-200"></i>
-            </div>
-            <div>
-              <h3 class="text-base font-medium text-cream-100 mb-2">Keep Packages Consistent</h3>
-              <p class="text-sm text-cream-400/80 leading-relaxed">
-                Names, fiduciaries, beneficiaries, counties, and provisions stay aligned across the full package.
-              </p>
-            </div>
-          </div>
-
-          <div class="glass-card rounded-3xl p-7 flex gap-5 items-start hover:border-cream-300/15 transition-colors reveal">
-            <div class="w-11 h-11 rounded-xl bg-navy-700/50 border border-subtle flex items-center justify-center shrink-0">
-              <i data-lucide="shield-alert" class="w-5 h-5 text-cream-200"></i>
-            </div>
-            <div>
-              <h3 class="text-base font-medium text-cream-100 mb-2">Reduce Avoidable Errors</h3>
-              <p class="text-sm text-cream-400/80 leading-relaxed">
-                Guided intake and review checks help surface missing details before documents are finalized.
-              </p>
-            </div>
-          </div>
-
-          <div class="glass-card rounded-3xl p-7 flex gap-5 items-start hover:border-cream-300/15 transition-colors reveal reveal-delay-1">
-            <div class="w-11 h-11 rounded-xl bg-navy-700/50 border border-subtle flex items-center justify-center shrink-0">
-              <i data-lucide="wrench" class="w-5 h-5 text-cream-200"></i>
-            </div>
-            <div>
-              <h3 class="text-base font-medium text-cream-100 mb-2">Tailored to Your Firm</h3>
-              <p class="text-sm text-cream-400/80 leading-relaxed">
-                InTrust can be configured around your document set, naming conventions, clauses, and internal review process.
-              </p>
-            </div>
-          </div>
-        </div>
+    <section class="firm-section section-pad" id="pricing">
+      <div class="container firm-layout">
+        <div><p class="eyebrow">04 / Thoughtfully fitted</p><h2>Your practice.<br>Your process.<br><em>Your InTrust.</em></h2><p>Start with the documents and drafting preferences your firm already knows. We’ll discuss the package, configuration, and support that fit your practice.</p><a href="#contact" class="button dark">Let’s talk about your workflow <span aria-hidden="true">↗</span></a></div>
+        <div class="firm-details"><article><span>01</span><div><h3>Scoped around your firm</h3><p>Pricing reflects your document set, template complexity, configuration, and implementation needs.</p></div></article><article><span>02</span><div><h3>Focused on your desktop</h3><p>Cases and workspace records stay on the device. Light and dark modes make the workspace feel like yours.</p></div></article><article><span>03</span><div><h3>Built to help you get started</h3><p>An in-app guide is always within reach, from your first case to the next client follow-up.</p></div></article></div>
       </div>
     </section>
 
-    <section class="py-20 px-6 benefits-bg">
-  <div class="max-w-5xl mx-auto">
-    <div class="text-center mb-12 reveal">
-      <div class="text-xs text-accent/80 font-medium uppercase tracking-widest mb-4">Workflow Shift</div>
-      <h2 class="font-serif text-3xl sm:text-4xl text-cream-50 mb-4">From Manual Drafting to Structured Review</h2>
-      <p class="text-cream-400 max-w-xl mx-auto">
-        InTrust is designed to reduce the repetitive checking, copying, and package assembly that slows estate planning teams down.
-      </p>
-    </div>
+    <section class="faq-section section-pad"><div class="container faq-layout"><div><p class="eyebrow">A few useful details</p><h2>Good questions.<br>Clear answers.</h2></div><div class="faqs">
+      <details><summary>Does InTrust replace document review?<span aria-hidden="true">+</span></summary><p>No. InTrust supports structured preparation and document assembly. Basic entry checks do not replace an attorney’s review of the documents and the client’s plan.</p></details>
+      <details><summary>How do external calendars work?<span aria-hidden="true">+</span></summary><p>Create an event in InTrust, then open a Google Calendar or Outlook draft, or export an Apple Calendar-compatible calendar file. You save or import it in the external calendar. These are separate copies; changes do not sync automatically.</p></details>
+      <details><summary>Can I send emails or collect payments?<span aria-hidden="true">+</span></summary><p>InTrust helps prepare an email draft that you review and send through your email app. Case fees record expected charges for internal planning; they are not invoicing, payment collection, or profit reporting.</p></details>
+      <details><summary>Can my team use it across devices?<span aria-hidden="true">+</span></summary><p>The current workspace stores data locally on each device. It does not provide shared cloud case storage or automatic device synchronization. We can discuss your team’s setup during a walkthrough.</p></details>
+      <details><summary>How do I get started?<span aria-hidden="true">+</span></summary><p>Request a walkthrough below. We’ll discuss your current estate package, drafting process, desktop requirements, and implementation scope before planning next steps.</p></details>
+    </div></div></section>
 
-    <div class="grid md:grid-cols-2 gap-5">
-      <div class="glass-card rounded-3xl p-8 reveal">
-        <div class="text-sm font-medium text-cream-300 mb-5">Before InTrust</div>
-        <div class="space-y-4">
-          <p class="text-sm text-cream-400/80">Manual edits across multiple documents</p>
-          <p class="text-sm text-cream-400/80">Repeated name and fiduciary checks</p>
-          <p class="text-sm text-cream-400/80">Clause and provision inconsistencies</p>
-          <p class="text-sm text-cream-400/80">Time spent assembling the same package again and again</p>
-        </div>
-      </div>
-
-      <div class="glass-card rounded-3xl p-8 reveal reveal-delay-1 workflow-highlight">
-        <div class="text-sm font-medium text-accent-light mb-5">With InTrust</div>
-        <div class="space-y-4">
-          <p class="text-sm text-cream-200">Structured intake and package setup</p>
-          <p class="text-sm text-cream-200">Consistent client details across documents</p>
-          <p class="text-sm text-cream-200">Review-ready document generation</p>
-          <p class="text-sm text-cream-200">A workflow tailored to your firm’s drafting standards</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <!-- Product -->
-    <section id="product" class="section-gradient py-20 px-6">
-      <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-10 reveal">
-          <div class="text-xs text-accent/80 font-medium uppercase tracking-widest mb-4">Product Experience</div>
-          <h2 class="font-serif text-3xl sm:text-4xl text-cream-50 mb-4">A Workspace Designed for Legal Work</h2>
-          <p class="text-cream-400 max-w-lg mx-auto">
-            Review case details, document selections, and package context from a clear workspace before moving into generation.
-          </p>
-        </div>
-
-        <div class="relative max-w-3xl mx-auto reveal">
-          <div class="text-xs uppercase tracking-[0.2em] text-cream-400/40 mb-4 text-center">
-            Case Workspace
-          </div>
-          <div class="absolute inset-0 -z-10 blur-3xl opacity-30 bg-accent/10"></div>
-          <video
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-            poster="./assets/images/exportScreen.webp"
-            class="product-shot w-full h-auto block rounded-xl shadow-2xl border border-white/5"
-          >
-            <source src="./assets/images/generatingCase.webm" type="video/webm" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing -->
-    <section id="pricing" class="py-20 px-6 pricing-bg">
-      <div class="max-w-4xl mx-auto">
-        <div class="glass-card rounded-3xl p-8 md:p-10 reveal">
-          <div class="grid md:grid-cols-[1fr_1.1fr] gap-8 md:gap-10 items-center">
-            <div>
-              <div class="text-xs text-accent/80 font-medium uppercase tracking-widest mb-4">Pricing</div>
-              <h2 class="font-serif text-3xl sm:text-4xl text-cream-50 mb-4">Scoped Around Your Firm</h2>
-              <p class="text-cream-400 leading-relaxed">
-                InTrust is not positioned as a generic one-size-fits-all subscription. Pricing depends on your document set, implementation needs, template complexity, and workflow goals.
-              </p>
-            </div>
-
-            <div class="space-y-3">
-              <div class="bg-navy-800/30 rounded-2xl p-5 border border-subtle">
-                <div class="flex items-start gap-3">
-                  <i data-lucide="file-stack" class="w-5 h-5 text-accent mt-0.5"></i>
-                  <div>
-                    <h3 class="text-sm font-medium text-cream-100 mb-1">Document Package Scope</h3>
-                    <p class="text-sm text-cream-400/80">The number and complexity of documents your firm wants automated.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="bg-navy-800/30 rounded-2xl p-5 border border-subtle">
-                <div class="flex items-start gap-3">
-                  <i data-lucide="workflow" class="w-5 h-5 text-accent mt-0.5"></i>
-                  <div>
-                    <h3 class="text-sm font-medium text-cream-100 mb-1">Workflow Fit</h3>
-                    <p class="text-sm text-cream-400/80">Configuration around your intake, review, and drafting process.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="bg-navy-800/30 rounded-2xl p-5 border border-subtle">
-                <div class="flex items-start gap-3">
-                  <i data-lucide="settings-2" class="w-5 h-5 text-accent mt-0.5"></i>
-                  <div>
-                    <h3 class="text-sm font-medium text-cream-100 mb-1">Implementation Support</h3>
-                    <p class="text-sm text-cream-400/80">Setup, testing, refinement, and rollout support can be scoped based on need.</p>
-                  </div>
-                </div>
-              </div>
-
-              <a href="#contact" class="cta-primary text-navy-950 font-medium px-6 py-3 rounded-2xl text-sm tracking-wide inline-flex items-center gap-2 mt-2">
-                Discuss Fit
-                <i data-lucide="arrow-right" class="w-4 h-4"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="py-20 px-6 contact-bg">
-      <div class="max-w-5xl mx-auto">
-        <div class="grid lg:grid-cols-[0.95fr_1.05fr] gap-8 items-stretch">
-          <div class="glass-card rounded-3xl p-8 md:p-10 reveal">
-            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent/20 to-accent/5 border border-accent/15 flex items-center justify-center mb-7">
-              <i data-lucide="shield-check" class="w-7 h-7 text-accent"></i>
-            </div>
-
-            <h2 class="font-serif text-3xl text-cream-50 mb-4">
-              Bring Consistency and Speed to Your Estate Planning Workflow
-            </h2>
-
-            <p class="text-cream-400 mb-7 leading-relaxed">
-              Request a walkthrough and share what your current drafting process looks like. From there, we can discuss where InTrust may fit.
-            </p>
-
-            <div class="space-y-4">
-              <div class="flex gap-3">
-                <i data-lucide="check-circle-2" class="w-5 h-5 text-accent shrink-0 mt-0.5"></i>
-                <p class="text-sm text-cream-400/80">Tailored around your existing documents and drafting preferences.</p>
-              </div>
-              <div class="flex gap-3">
-                <i data-lucide="check-circle-2" class="w-5 h-5 text-accent shrink-0 mt-0.5"></i>
-                <p class="text-sm text-cream-400/80">Designed for small and focused estate planning practices.</p>
-              </div>
-              <div class="flex gap-3">
-                <i data-lucide="check-circle-2" class="w-5 h-5 text-accent shrink-0 mt-0.5"></i>
-                <p class="text-sm text-cream-400/80">Early access conversations are focused on fit, scope, and implementation.</p>
-              </div>
-            </div>
-          </div>
-
-          <form
-            id="contact-form"
-            action="https://formspree.io/f/mpqbywae"
-            method="POST"
-            class="glass-card rounded-3xl p-8 md:p-10 reveal reveal-delay-1"
-          >
-          <input type="hidden" name="_subject" value="New InTrust Demo Request" />
-            <div class="mb-6">
-              <h3 class="text-xl font-medium text-cream-50 mb-2">Request a Demo</h3>
-              <p class="text-sm text-cream-400/80">
-                Share a little about your firm and the workflow you want to improve.
-              </p>
-            </div>
-
-            <div class="grid sm:grid-cols-2 gap-4 mb-4">
-              <label class="block">
-                <span class="text-xs text-cream-300/80">Name</span>
-                <input name="name" type="text" required class="form-field mt-2" placeholder="Your name" />
-              </label>
-
-              <label class="block">
-                <span class="text-xs text-cream-300/80">Email</span>
-                <input name="email" type="email" required class="form-field mt-2" placeholder="you@firm.com" />
-              </label>
-            </div>
-
-            <div class="grid sm:grid-cols-2 gap-4 mb-4">
-              <label class="block">
-                <span class="text-xs text-cream-300/80">Firm</span>
-                <input name="firm" type="text" class="form-field mt-2" placeholder="Firm name" />
-              </label>
-
-              <label class="block">
-                <span class="text-xs text-cream-300/80">Role</span>
-                <input name="role" type="text" class="form-field mt-2" placeholder="Attorney, owner, paralegal..." />
-              </label>
-            </div>
-
-            <label class="block mb-5">
-              <span class="text-xs text-cream-300/80">What are you hoping to improve?</span>
-              <textarea name="message" rows="5" required class="form-field mt-2 resize-none" placeholder="Tell me about your current drafting workflow, document package, or bottlenecks."></textarea>
-            </label>
-
-            <button type="submit" class="cta-primary text-navy-950 font-medium px-7 py-3.5 rounded-2xl text-sm tracking-wide inline-flex items-center gap-2">
-              Send Request
-              <i data-lucide="send" class="w-4 h-4"></i>
-            </button>
-
-            <p id="form-status" class="text-xs text-cream-400/50 mt-4">
-              Your request will be sent directly to the InTrust team.
-            </p>
-          </form>
-        </div>
-      </div>
-    </section>
+    <section class="contact-section section-pad" id="contact"><div class="container contact-layout"><div class="contact-copy"><p class="eyebrow"><span class="status-dot"></span> Let’s move your practice forward</p><h2>A better flow<br>starts with<br><em>a conversation.</em></h2><p>Tell us a little about your practice.<br>We’ll walk through InTrust together and see where it can make your work easier.</p><a class="contact-email" href="mailto:isaacdavidnino@gmail.com">isaacdavidnino@gmail.com <span aria-hidden="true">↗</span></a><a class="contact-phone" href="tel:+19564564242">Call or text (956) 456-4242</a></div>
+      <form id="contact-form" action="https://formspree.io/f/mpqbywae" method="POST"><input type="hidden" name="_subject" value="New InTrust Demo Request"><h3>See InTrust in action.</h3><p>A personal walkthrough, shaped around your workflow.</p><div class="form-grid"><label>Name<input name="name" autocomplete="name" required placeholder="Your name" maxlength="160"></label><label>Work email<input name="email" type="email" autocomplete="email" required placeholder="you@firm.com" maxlength="254"></label><label>Firm <small>(optional)</small><input name="firm" autocomplete="organization" placeholder="Firm name" maxlength="200"></label><label>Role <small>(optional)</small><input name="role" autocomplete="organization-title" placeholder="Attorney, paralegal…" maxlength="160"></label></div><label>What would you like to make easier?<textarea name="message" required rows="3" maxlength="5000" placeholder="Tell us about your drafting workflow. Please leave out confidential client information."></textarea></label><button type="submit" class="button light">Request my walkthrough <span aria-hidden="true">↗</span></button><p id="form-status" class="form-status" role="status" aria-live="polite">Your request is sent to the InTrust team through Formspree.</p></form>
+    </div></section>
   </main>
-
-  <!-- Footer -->
-  <footer class="py-16 px-6 border-t border-subtle footer-bg">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-[1fr_1fr] gap-16 items-start">
-      <div>
-        <div class="flex items-center gap-3 mb-5">
-          <img
-            src="./assets/brand/intrust-icon.svg"
-            alt="InTrust logo"
-            class="w-8 h-8 rounded-lg"
-          />
-          <span class="font-serif text-xl text-cream-50">InTrust</span>
-        </div>
-
-        <p class="text-sm text-cream-400/70 leading-relaxed max-w-sm">
-          Tailored workflow automation for complete estate planning document packages.
-        </p>
-
-        <div class="mt-10 pt-8 border-t border-subtle max-w-lg text-sm text-cream-400/80 space-y-4">
-          <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-lg bg-navy-800/50 border border-subtle flex items-center justify-center shrink-0">
-              <i data-lucide="mail" class="w-4 h-4 text-accent"></i>
-            </div>
-            <p class="leading-relaxed">
-              Prefer email? Contact directly at
-              <a
-                href="mailto:isaacdavidnino@gmail.com"
-                class="text-cream-200 hover:text-accent transition-colors"
-              >
-                isaacdavidnino@gmail.com
-              </a>
-            </p>
-          </div>
-          <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-lg bg-navy-800/50 border border-subtle flex items-center justify-center shrink-0">
-              <i data-lucide="phone" class="w-4 h-4 text-accent"></i>
-            </div>
-            <p class="leading-relaxed">
-              Prefer a conversation?
-              <a
-                href="tel:+19564564242"
-                class="text-cream-200 hover:text-accent transition-colors"
-              >
-                Call or text (956) 456-4242
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-2 gap-16 md:justify-self-end">
-        <div>
-          <div class="text-sm font-medium text-cream-300 mb-4">Site</div>
-          <div class="space-y-3">
-            <a href="#how-it-works" class="block text-sm text-cream-400/70 hover:text-cream-200 transition-colors">How It Works</a>
-            <a href="#benefits" class="block text-sm text-cream-400/70 hover:text-cream-200 transition-colors">Benefits</a>
-            <a href="#product" class="block text-sm text-cream-400/70 hover:text-cream-200 transition-colors">Product</a>
-            <a href="#contact" class="block text-sm text-cream-400/70 hover:text-cream-200 transition-colors">Request a Demo</a>
-          </div>
-        </div>
-
-        <div>
-          <div class="text-sm font-medium text-cream-300 mb-4">Legal</div>
-          <div class="space-y-3">
-            <span class="block text-sm text-cream-400/50">Privacy Policy</span>
-            <span class="block text-sm text-cream-400/50">Terms of Service</span>
-            <span class="block text-sm text-cream-400/50">Data Security</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="max-w-6xl mx-auto mt-12 pt-6 border-t border-subtle flex flex-col sm:flex-row justify-between items-center gap-4">
-      <div class="text-sm text-cream-400/50">
-        © 2026 InTrust. All rights reserved.
-      </div>
-      <div class="text-sm text-cream-400/50">
-        getintrust.com
-      </div>
-    </div>
-  </footer>
-
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="./script.js"></script>
+  <footer><div class="container footer-main"><div><a class="wordmark" href="#top">InTrust</a><p>Thoughtfully prepared.<br>Ready for what’s next.</p></div><nav aria-label="Footer navigation"><a href="#how-it-works">The workflow</a><a href="#product">The workspace</a><a href="#pricing">For your firm</a><a href="#contact">Get in touch ↗</a></nav><span class="footer-signoff">Less busywork.<br>More forward motion.</span></div><div class="container footer-bottom"><span>© <span id="year">2026</span> InTrust. All rights reserved.</span><span>Estate planning, thoughtfully connected.</span><a href="#top">Back to top ↑</a></div></footer>
+  <button id="motion-toggle" class="motion-toggle" aria-pressed="true" hidden><span aria-hidden="true">≈</span> <span id="motion-label">Motion on</span></button>
+  <dialog id="image-dialog" aria-labelledby="image-dialog-title"><div class="image-dialog-header"><h2 id="image-dialog-title">InTrust workspace</h2><button class="close-image" type="button" aria-label="Close enlarged screenshot">Close <span aria-hidden="true">×</span></button></div><img id="dialog-image" src="assets/images/current/overview-dark.png" width="1280" height="678" alt=""><p>Actual workspace · Fictional sample data</p></dialog>
 </body>
 </html>
