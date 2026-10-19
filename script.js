@@ -115,7 +115,7 @@ const screenTabs=setupTabs(document.querySelector('.workspace-tabs'),tab => {
   const key=tab.dataset.screen;const screen=screens[key];
   markSelected(screenTabs,tab);
   document.getElementById('workspace-panel').setAttribute('aria-labelledby',tab.id);
-  workspaceImage.src=`assets/images/current/${key}-dark.png`;workspaceImage.alt=`${screen.alt} Dark mode.`;
+  workspaceImage.src=`assets/images/current/${key}-dark.jpg`;workspaceImage.alt=`${screen.alt} Dark mode.`;
   setText('screen-label',`InTrust / ${screen.label}`);setText('screen-title',screen.title);setText('screen-description',screen.description);
   enlargeButton.setAttribute('aria-label',`Enlarge ${screen.label.toLowerCase()} screenshot`);
 });
@@ -181,7 +181,7 @@ const heroImage=document.getElementById('hero-image');
 const lightPreview=document.getElementById('preview-light');
 const darkPreview=document.getElementById('preview-dark');
 function previewAppearance(dark){
-  heroImage.src=`assets/images/current/overview${dark?'-dark':''}.png`;
+  heroImage.src=`assets/images/current/overview${dark?'-dark':''}.jpg`;
   heroImage.alt=`The redesigned InTrust overview in ${dark?'dark':'light'} mode, with fictional case activity and a continue-case action.`;
   lightPreview.setAttribute('aria-pressed',String(!dark));
   darkPreview.setAttribute('aria-pressed',String(dark));
