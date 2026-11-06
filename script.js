@@ -120,13 +120,18 @@ const screenTabs=setupTabs(document.querySelector('.workspace-tabs'),tab => {
   enlargeButton.setAttribute('aria-label',`Enlarge ${screen.label.toLowerCase()} screenshot`);
 });
 const imageDialog=document.getElementById('image-dialog');
-enlargeButton.addEventListener('click',() => {
-  const image=document.getElementById('dialog-image');image.src=workspaceImage.src;image.alt=workspaceImage.alt;
-  setText('image-dialog-title',document.getElementById('screen-label').textContent);
+let imageOpener=enlargeButton;
+function openImage(source,title,opener) {
+  imageOpener=opener;
+  const image=document.getElementById('dialog-image');image.src=source.src;image.alt=source.alt;
+  setText('image-dialog-title',title);
   imageDialog.showModal();document.body.classList.add('dialog-open');
-});
+}
+enlargeButton.addEventListener('click',()=>openImage(workspaceImage,document.getElementById('screen-label').textContent,enlargeButton));
+const enlargeIntake=document.getElementById('enlarge-intake');
+enlargeIntake.addEventListener('click',()=>openImage(document.getElementById('intake-image'),'Intake development preview · Fictional data · Timing simulated',enlargeIntake));
 document.querySelector('.close-image').addEventListener('click',()=>imageDialog.close());
-imageDialog.addEventListener('close',()=>{document.body.classList.remove('dialog-open');enlargeButton.focus({preventScroll:true});});
+imageDialog.addEventListener('close',()=>{document.body.classList.remove('dialog-open');imageOpener.focus({preventScroll:true});});
 imageDialog.addEventListener('click',event=>{if(event.target===imageDialog){const r=imageDialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)imageDialog.close();}});
 
 const manualInput=document.getElementById('manual-time');
@@ -206,7 +211,7 @@ let framePending = false;
 let lastScrollStage = -1;
 const clamp = (value, min = 0, max = 1) => Math.max(min, Math.min(max, value));
 
-const revealElements = [...document.querySelectorAll('.section-heading > *, .centered, .intro-strip .container > *, .detail-grid article, .time-copy > *, .time-calculator, .firm-layout > div:first-child > *, .firm-details article, .faq-layout > div:first-child, .faqs details, .contact-copy > *, #contact-form, .footer-main > *')];
+const revealElements = [...document.querySelectorAll('.section-heading > *, .centered, .intro-strip .container > *, .detail-grid article, .intake-story, .intake-preview, .release-updates article, .time-copy > *, .time-calculator, .firm-layout > div:first-child > *, .firm-details article, .faq-layout > div:first-child, .faqs details, .contact-copy > *, #contact-form, .footer-main > *')];
 const revealObserver = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
   for (const entry of entries) {
     if (!entry.isIntersecting) continue;

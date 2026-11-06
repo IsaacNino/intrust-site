@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>InTrust — A clearer flow for estate planning</title>
-  <meta name="description" content="Move from case details to estate documents ready for review. InTrust brings document preparation, clients, tasks, calendar events, and expected fees into one desktop workspace.">
+  <meta name="description" content="Estate document preparation, clients, tasks, calendars, and expected fees in one desktop workspace. Explore InTrust and preview upcoming document intake with review before applying changes.">
   <meta name="theme-color" content="#1f2435">
   <link rel="canonical" href="https://www.getintrust.com/">
   <meta property="og:type" content="website">
@@ -20,8 +20,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261018-dark-motion">
-  <script src="script.js?v=dark-gallery-2" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20261105-intake">
+  <script src="script.js?v=20261105-intake" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -31,7 +31,7 @@
       <a class="wordmark" href="#top" aria-label="InTrust home">InTrust</a>
       <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu <span aria-hidden="true">☰</span></button>
       <nav id="main-nav" aria-label="Main navigation">
-        <a href="#how-it-works">The workflow</a><a href="#product">The workspace</a><a href="#pricing">For your firm</a>
+        <a href="#how-it-works">The workflow</a><a href="#product">The workspace</a><a href="#upcoming">What’s next</a><a href="#pricing">For your firm</a>
         <a class="button small light" href="#contact">Let’s take a look <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
@@ -44,7 +44,7 @@
         <h1>Less busywork.<br>More <em>forward motion.</em></h1>
         <p class="hero-description">From the first client detail to the next follow-up.<br class="desktop-break"> A calmer, more connected way to prepare estate packages.</p>
         <div class="hero-actions"><a class="button light" href="#contact">Request a walkthrough <span aria-hidden="true">↗</span></a><a class="text-link" href="#how-it-works">See how it flows <span aria-hidden="true">↓</span></a></div>
-        <p class="hero-note">A desktop workspace for estate planning practices · Early access</p>
+        <p class="hero-note">A Mac and Windows desktop workspace for Texas estate planning practices · Early access</p>
       </div>
       <div class="hero-product container">
         <div class="product-topline"><span><span class="tiny-cross" aria-hidden="true">✳</span> A little clarity. A lot of momentum.</span><div class="appearance-preview" role="group" aria-label="Preview workspace appearance"><button id="preview-light" aria-pressed="false">Light</button><button id="preview-dark" aria-pressed="true">Dark</button></div></div>
@@ -110,6 +110,34 @@
       </div>
     </section>
 
+    <section class="upcoming-section section-pad" id="upcoming" aria-labelledby="upcoming-title">
+      <div class="container">
+        <div class="section-heading split-heading"><div><p class="eyebrow">Coming next / Intake with review</p><h2 id="upcoming-title">A head start<br><em>on the details.</em></h2></div><p>Your client information already has a starting point. We’re building a way to bring it into the case, with a person reviewing each proposed change.</p></div>
+        <div class="intake-layout">
+          <div class="intake-story">
+            <span class="release-label">In testing · Not yet a general release</span>
+            <h3>Less re-entry. A clear review.</h3>
+            <p>Import from CSV, Excel, or a supported questionnaire JSON file. Choose a new or existing case, then check the proposed values before applying them.</p>
+            <ol class="intake-steps">
+              <li><strong>Follow the preparation.</strong><span>Progress stages and elapsed time show what the tool is working on.</span></li>
+              <li><strong>Review one detail at a time.</strong><span>Compare the source, suggested field, and value. Correct, approve, or skip it.</span></li>
+              <li><strong>Apply only what you approve.</strong><span>Your document selections and legal choices stay with you.</span></li>
+            </ol>
+          </div>
+          <figure class="intake-preview">
+            <div class="app-window"><div class="window-bar"><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>InTrust / Intake review</span><span>DEVELOPMENT PREVIEW</span></div><button class="screenshot-button" id="enlarge-intake" aria-label="Enlarge intake review development preview"><img id="intake-image" src="assets/images/current/intake-review-dark.png" width="1100" height="760" loading="lazy" alt="A fictional intake review showing Alex Morgan’s proposed name beside the source page, with an Approve value button."><span class="enlarge-label">View larger ↗</span></button></div>
+            <figcaption>PDF development preview · Fictional data · Displayed extraction timing is simulated.</figcaption>
+            <details class="intake-pdf-details"><summary>What about scanned or handwritten PDFs?<span aria-hidden="true">+</span></summary><p>Local PDF extraction is a development prototype, not part of regular installed releases. Will, Trust, and Provisions headings help organize review beside the original page. Information without a supported destination stays in source notes. Handwriting accuracy varies, and every proposed value needs review. Packaging and Windows testing are still in progress.</p></details>
+          </figure>
+        </div>
+        <div class="release-updates" aria-label="Other updates in preparation">
+          <article><span class="release-label">In validation</span><h3>Protected storage and recovery</h3><p>Encrypted workspace storage and password-protected backups are implemented in a test version. Mac and Windows recovery checks must pass before rollout. Exported Word files remain separate.</p></article>
+          <article><span class="release-label">Rollout preparation</span><h3>Updates from inside InTrust</h3><p>A way to check for new versions and install after saving is in preparation. Installer signing, distribution, and upgrade testing remain in progress; automatic updates are not enabled for general use.</p></article>
+        </div>
+        <p class="upcoming-note">These are previews of work in progress, not delivery dates. We’ll confirm the features in your installed version during a walkthrough.</p>
+      </div>
+    </section>
+
     <section class="time-section section-pad">
       <div class="container time-layout">
         <div class="time-copy"><p class="eyebrow">03 / Room for what matters</p><h2>What could a little<br>less repetition<br> <em>make room for?</em></h2><p>A client conversation. A careful review.<br>A little breathing room in your day.</p><p class="time-secondary">Explore the difference with your own estimates.<br>In the app, Productivity uses your recorded activity and the manual baselines you set.</p></div>
@@ -131,6 +159,7 @@
     </section>
 
     <section class="faq-section section-pad"><div class="container faq-layout"><div><p class="eyebrow">A few useful details</p><h2>Good questions.<br>Clear answers.</h2></div><div class="faqs">
+      <details><summary>Can I import an existing intake document?<span aria-hidden="true">+</span></summary><p>The upcoming import workflow supports CSV, Excel, and supported questionnaire JSON files in the test version. You review proposed mappings and apply only approved values. PDF scans and handwriting are a separate development prototype, not available in regular installed releases yet. <a href="#upcoming">Explore the intake preview.</a></p></details>
       <details><summary>Does InTrust replace document review?<span aria-hidden="true">+</span></summary><p>No. InTrust supports structured preparation and document assembly. Basic entry checks do not replace an attorney’s review of the documents and the client’s plan.</p></details>
       <details><summary>How do external calendars work?<span aria-hidden="true">+</span></summary><p>Create an event in InTrust, then open a Google Calendar or Outlook draft, or export an Apple Calendar-compatible calendar file. You save or import it in the external calendar. These are separate copies; changes do not sync automatically.</p></details>
       <details><summary>Can I send emails or collect payments?<span aria-hidden="true">+</span></summary><p>InTrust helps prepare an email draft that you review and send through your email app. Case fees record expected charges for internal planning; they are not invoicing, payment collection, or profit reporting.</p></details>
@@ -142,7 +171,7 @@
       <form id="contact-form" action="https://formspree.io/f/mpqbywae" method="POST"><input type="hidden" name="_subject" value="New InTrust Demo Request"><h3>See InTrust in action.</h3><p>A personal walkthrough, shaped around your workflow.</p><div class="form-grid"><label>Name<input name="name" autocomplete="name" required placeholder="Your name" maxlength="160"></label><label>Work email<input name="email" type="email" autocomplete="email" required placeholder="you@firm.com" maxlength="254"></label><label>Firm <small>(optional)</small><input name="firm" autocomplete="organization" placeholder="Firm name" maxlength="200"></label><label>Role <small>(optional)</small><input name="role" autocomplete="organization-title" placeholder="Attorney, paralegal…" maxlength="160"></label></div><label>What would you like to make easier?<textarea name="message" required rows="3" maxlength="5000" placeholder="Tell us about your drafting workflow. Please leave out confidential client information."></textarea></label><button type="submit" class="button light">Request my walkthrough <span aria-hidden="true">↗</span></button><p id="form-status" class="form-status" role="status" aria-live="polite">Your request is sent to the InTrust team through Formspree.</p></form>
     </div></section>
   </main>
-  <footer><div class="container footer-main"><div><a class="wordmark" href="#top">InTrust</a><p>Thoughtfully prepared.<br>Ready for what’s next.</p></div><nav aria-label="Footer navigation"><a href="#how-it-works">The workflow</a><a href="#product">The workspace</a><a href="#pricing">For your firm</a><a href="#contact">Get in touch ↗</a></nav><span class="footer-signoff">Less busywork.<br>More forward motion.</span></div><div class="container footer-bottom"><span>© <span id="year">2026</span> InTrust. All rights reserved.</span><span>Estate planning, thoughtfully connected.</span><a href="#top">Back to top ↑</a></div></footer>
+  <footer><div class="container footer-main"><div><a class="wordmark" href="#top">InTrust</a><p>Thoughtfully prepared.<br>Ready for what’s next.</p></div><nav aria-label="Footer navigation"><a href="#how-it-works">The workflow</a><a href="#product">The workspace</a><a href="#upcoming">What’s next</a><a href="#pricing">For your firm</a><a href="#contact">Get in touch ↗</a></nav><span class="footer-signoff">Less busywork.<br>More forward motion.</span></div><div class="container footer-bottom"><span>© <span id="year">2026</span> InTrust. All rights reserved.</span><span>Estate planning, thoughtfully connected.</span><a href="#top">Back to top ↑</a></div></footer>
   <button id="motion-toggle" class="motion-toggle" aria-pressed="true" hidden><span aria-hidden="true">≈</span> <span id="motion-label">Motion on</span></button>
   <dialog id="image-dialog" aria-labelledby="image-dialog-title"><div class="image-dialog-header"><h2 id="image-dialog-title">InTrust workspace</h2><button class="close-image" type="button" aria-label="Close enlarged screenshot">Close <span aria-hidden="true">×</span></button></div><img id="dialog-image" src="assets/images/current/overview-dark.jpg" width="1280" height="678" alt=""><p>Actual workspace · Fictional sample data</p></dialog>
 </body>
